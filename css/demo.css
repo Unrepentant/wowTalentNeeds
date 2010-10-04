@@ -1,0 +1,23 @@
+/* Demo (index.html) page styling */
+body {
+ background: #333;
+ color: #ddd;
+}
+
+/* JATT (Just Another Tooltip) CSS */
+.tooltip, .preview, .screenshot {
+ cursor: pointer;
+}
+#tooltip, #preview, #screenshot {
+ color: #dddddd;
+ background: #222222;
+ border: 1px solid #333333;
+ padding: 5px;
+ opacity: 0.9;
+ filter: alpha(opacity=90);
+ text-align: left;
+ border-radius: 1em;
+ -moz-border-radius: 1em;
+ -webkit-border-radius: 1em;
+ display: none;
+}
