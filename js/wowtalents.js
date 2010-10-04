@@ -78,7 +78,7 @@
    if (x.match('m')) { return ['Medium', base.options.cm]; }
    if (x.match('h')) { return ['High', base.options.ch]; }
    return [base.options.defaultNeed, base.options.cd];
-  }
+  };
 
   // Run initializer
   base.init();
