@@ -2,6 +2,29 @@
 body {
  background: #333;
  color: #ddd;
+ width: 600px;
+ margin: 20px auto;
+}
+h2 {
+ text-align: center;
+}
+.download {
+ background: #000;
+ color: #ddd;
+ text-decoration: none;
+ display: block;
+ width: 68px;
+ padding: 10px;
+ float: right;
+ border-radius: 1em;
+ -moz-border-radius: 1em;
+ -webkit-border-radius: 1em;
+}
+.download:hover {
+ background: #555;
+}
+.clear {
+ clear: both;
 }
 
 /* JATT (Just Another Tooltip) CSS */
