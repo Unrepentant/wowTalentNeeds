@@ -2,7 +2,7 @@
 
 Show your World of Warcraft recruitment status by displaying the specific talent needed for each class. Check out the [demo][1]!
 
- ![talent1.jpg][2] &nbsp;&nbsp; ![talent2.jpg][3]
+ ![talent1.jpg][2] &nbsp;&nbsp; ![talent2.jpg][3] &nbsp;&nbsp; ![talent3.jpg][4]
 
 ## Features ##
 
@@ -113,3 +113,4 @@ You can set this variable to <code>l</code> (low), <code>m</code> (medium) or <c
   [1]: http://mottie.github.com/wowTalentNeeds/
   [2]: http://mottie.github.com/wowTalentNeeds/images/talent1.jpg
   [3]: http://mottie.github.com/wowTalentNeeds/images/talent2.jpg
+  [4]: http://mottie.github.com/wowTalentNeeds/images/talent3.jpg
