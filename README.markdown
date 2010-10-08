@@ -110,6 +110,6 @@ You can set this variable to <code>l</code> (low), <code>m</code> (medium) or <c
 
 * Initial version
 
-  [1]: https://dl.dropbox.com/u/1510510/wowTalentNeeds/index.html
+  [1]: http://mottie.github.com/wowTalentNeeds/
   [2]: http://i201.photobucket.com/albums/aa236/Mottie1/testsite/forums/talent1.jpg
   [3]: http://i201.photobucket.com/albums/aa236/Mottie1/testsite/forums/talent2.jpg
