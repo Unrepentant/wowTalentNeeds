@@ -20,76 +20,86 @@ Show your World of Warcraft recruitment status by displaying the specific talent
 ## Default Options ##
 **Script**
 
-     $(document).ready(function(){
-       $('.recruitTalent').wowTalents({
-         defaultNeed     : 'Low',     // Default need that is set when no setting is found
-         colorBackground : true,      // Adds need level color to the tooltip background (true) or the text (false)
-         useClassColors  : true,      // Adds class color to the class name when true, otherwise defined in CSS
-         tooltipClass    : 'tooltip', // Class added for tooltip script to target
-         tooltipWidth    : 150,       // Tooltip width, added to the tooltip metadata
-         tooltipMetadata : 'class',   // Location the tooltip meta data is added e.g. {width:150px;color:#ddd;background:#333;}
-         deathknight     : "",        // The classes from here down are empty and will revert to the default need.
-         druid           : "",
-         hunter          : "",
-         mage            : "",
-         paladin         : "",
-         priest          : "",
-         rogue           : "",
-         shaman          : "",
-         warlock         : "",
-         warrior         : ""
-       });
-     });
+```javascript
+$(document).ready(function(){
+  $('.recruitTalent').wowTalents({
+    defaultNeed     : 'Low',     // Default need that is set when no setting is found
+    colorBackground : true,      // Adds need level color to the tooltip background (true) or the text (false)
+    useClassColors  : true,      // Adds class color to the class name when true, otherwise defined in CSS
+    tooltipClass    : 'tooltip', // Class added for tooltip script to target
+    tooltipWidth    : 150,       // Tooltip width, added to the tooltip metadata
+    tooltipMetadata : 'class',   // Location the tooltip meta data is added e.g. {width:150px;color:#ddd;background:#333;}
+    deathknight     : "",        // The classes from here down are empty and will revert to the default need.
+    druid           : "",
+    hunter          : "",
+    mage            : "",
+    paladin         : "",
+    priest          : "",
+    rogue           : "",
+    shaman          : "",
+    warlock         : "",
+    warrior         : ""
+  });
+});
+```
 
 **HTML**
 
-    <div class="recruitTitle">Recruitment Needs</div>
-    <div class="recruitTalent"></div>
-
+```html
+<div class="recruitTalent"></div>
+```
 
 ## Customization ##
 
 **CSS Styles:**
 
-* <code>.recruitTitle</code> - Styles the title of the widget above the box. The text of this title is in blue, look for "Recruitment Needs".
-* <code>.recruitTalent</code> - Sets the overall style of the widget. Set to be 200px wide by default.
-* <code>.high</code> - High priority text color (green by default). The tooltip background color is also set from this text color.
-* <code>.medium</code> - Medium priority text color (yellow by default).
-* <code>.low</code> - Low priority text color (red by default).
-* <code>.none</code> - No needs text color (grey by default).
-* <code>.usebg</code> - This sets the text color when the tooltip background color is being changed (black by default). Without this the text would be the same as the <code>#tooltip</code> definition.
-* <code>.talentIcons .high</code>, <code>.talentIcons .medium</code>, <code>.talentIcons .low</code> and <code>.talentIcons .none</code> - sets the opacity of the icon at each priority
-* <code>.classIcon</code> - Styles the table cell that contains the class icon and class text. It also contains the background image sprite which contains an image of all the WoW classes
-* <code>.classIcon span</code> - Styles only the class text. It was included to add padding between the icon and the text.
-* <code>.talentIcons</code> - Styles the table cell that contains all three talent icons.
-* <code>.talentIcon</code> - Contains the background image which contains all of the talent tree images.
+* `.recruitTitle` - Styles the title of the widget above the box. The text of this title is in blue, look for "Recruitment Needs".
+* `.recruitTalent` - Sets the overall style of the widget. Set to be 200px wide by default.
+* `.high` - High priority text color (green by default). The tooltip background color is also set from this text color.
+* `.medium` - Medium priority text color (yellow by default).
+* `.low` - Low priority text color (red by default).
+* `.none` - No needs text color (grey by default).
+* `.usebg` - This sets the text color when the tooltip background color is being changed (black by default). Without this the text would be the same as the `#tooltip` definition.
+* `.talentIcons .high`, `.talentIcons .medium`, `.talentIcons .low` and `.talentIcons .none` - sets the opacity of the icon at each priority
+* `.classIcon` - Styles the table cell that contains the class icon and class text. It also contains the background image sprite which contains an image of all the WoW classes
+* `.classIcon span` - Styles only the class text. It was included to add padding between the icon and the text.
+* `.talentIcons` - Styles the table cell that contains all three talent icons.
+* `.talentIcon` - Contains the background image which contains all of the talent tree images.
 
 **Options:**
 
-* <code>defaultNeed</code> is set to "Low" by default
+* `defaultNeed` is set to "Low" by default
 What this variable does is if you don't set the specific class need in the options, it will default to whatever this variable is set to.
-You can set this variable to <code>l</code> (low), <code>m</code> (medium) or <code>h</code> (high), anything else defaults to <code>n</code> (none).
+You can set this variable to `l` (low), `m` (medium) or `h` (high), anything else defaults to `n` (none).
 
-* <code>colorBackground</code> is set to true by default. When true, hovering over a talent tree icon will display a tooltip with the background color set.
+* `colorBackground` is set to true by default. When true, hovering over a talent tree icon will display a tooltip with the background color set.
 
-* <code>useClassColors</code> is set to true by default. When true, the class names will be set to their given class color (seen in the screen shots above). If set to false, the <code>.classIcon span</code> css definition will set the text color.
+* `useClassColors` is set to true by default. When true, the class names will be set to their given class color (seen in the screen shots above). If set to false, the `.classIcon span` css definition will set the text color.
 
-* <code>tooltipWidth</code> is set to 150 by default (in pixels). You can adjust this to fit the tooltip contents. The contents are centered within the coding.
+* `tooltipWidth` is set to 150 by default (in pixels). You can adjust this to fit the tooltip contents. The contents are centered within the coding.
 
-* Use the class name to set each class need. Replace the <code>x</code> below with an <code>n</code> (none), <code>l</code> (low), <code>m</code> (medium) or <code>h</code> (high); adding anything else will cause the script to add the value of the <code>defaultNeed</code> option:
+* Use the class name to set each class need. Replace the `x` below with an `n` (none), `l` (low), `m` (medium) or `h` (high); adding anything else will cause the script to add the value of the `defaultNeed` option:
 
-           deathknight : "x,x,x",
-           druid       : "x,x,x",
-           hunter      : "x,x,x",
-           mage        : "x,x,x",
-           paladin     : "x,x,x",
-           priest      : "x,x,x",
-           rogue       : "x,x,x",
-           shaman      : "x,x,x",
-           warlock     : "x,x,x",
-           warrior     : "x,x,x"
+```javascript
+deathknight : "x,x,x",
+druid       : "x,x,x",
+hunter      : "x,x,x",
+mage        : "x,x,x",
+paladin     : "x,x,x",
+priest      : "x,x,x",
+rogue       : "x,x,x",
+shaman      : "x,x,x",
+warlock     : "x,x,x",
+warrior     : "x,x,x"
+```
 
 ##Changelog##
+
+**Version 1.3.1 (6/6/2011)**
+
+* Changed layout from using a table to divs and spans.
+* Tooltips will now only show the text about the talent need. Removed the center tag.
+* Did some code cleanup & moved all demo files to a demo directory.
 
 **Version 1.3 (10/3/2010)**
 
@@ -100,17 +110,17 @@ You can set this variable to <code>l</code> (low), <code>m</code> (medium) or <c
 
 **Version 1.2 (3/11/2010)**
 
-* Added <code>useClassColors</code> option to allow turning off the class coloring for sites using a white background.
+* Added `useClassColors` option to allow turning off the class coloring for sites using a white background.
 
 **Version 1.1 (3/11/2010)**
 
-* Changed <code>defaultNeed</code> to work with just the first letter.
+* Changed `defaultNeed` to work with just the first letter.
 
 **Version 1.0 (2/21/2010)**
 
 * Initial version
 
   [1]: http://mottie.github.com/wowTalentNeeds/
-  [2]: http://mottie.github.com/wowTalentNeeds/images/talent1.jpg
-  [3]: http://mottie.github.com/wowTalentNeeds/images/talent2.jpg
-  [4]: http://mottie.github.com/wowTalentNeeds/images/talent3.jpg
+  [2]: http://mottie.github.com/wowTalentNeeds/demo/talent1.jpg
+  [3]: http://mottie.github.com/wowTalentNeeds/demo/talent2.jpg
+  [4]: http://mottie.github.com/wowTalentNeeds/demo/talent3.jpg

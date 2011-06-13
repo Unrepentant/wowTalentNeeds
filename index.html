@@ -1,27 +1,29 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html><head>
+<!DOCTYPE html>
+<html>
+<head>
  <title>WoW Talent Needs jQuery Plugin</title>
- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
- <script src="js/jquery.jatt.min.js" type="text/javascript"></script>
- <script src="js/wowtalents.js" type="text/javascript"></script>
- <link rel="stylesheet" href="css/demo.css" type="text/css" />
- <link rel="stylesheet" href="css/wowtalents.css" type="text/css" />
 
- <script type="text/javascript">
- $(document).ready(function(){
+ <!-- Required jQuery -->
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
 
-  // Just another tooltip settings (http://github.com/Mottie/Jatt)
-  $.jatt({
-   direction: 's',
-   live: true
-  });
+ <!-- Demo files (optional) -->
+ <link rel="stylesheet" href="demo/demo.css">
+
+ <!-- Jatt is the tooltip plugin, it is optional but if you use another tooltip, make sure it can use meta data to style the tooltip -->
+ <script src="demo/jquery.jatt.min.js"></script>
+
+ <!-- WoWTalents plugin - required -->
+ <link rel="stylesheet" href="css/wowtalents.css">
+ <script src="js/wowtalents.js"></script>
+ <script>
+ $(function(){
 
   // WoWTalentNeeds initialization
   $('#recruit1').wowTalents({
    colorBackground: false,
    useClassColors: true,
    defaultNeed: 'n',
-   druid : ',-,h',
+   druid : ',-,h', // empty parameters or characters that don't match anything will be set to the default need
    mage  : 'l,m,h',
    rogue : 'h,l,m',
    warrior : 'l'
@@ -31,24 +33,31 @@
    colorBackground: true,
    useClassColors: true,
    defaultNeed: 'l',
-   deathknight: 'l,h,l',
+   deathknight: ',h,',
    druid : 'm,n,h',
    rogue : 'm,l,m',
    warrior : ',n,m'
   });
 
- })
+  // Just another tooltip settings (http://github.com/Mottie/Jatt)
+  $.jatt({
+   direction : 's'
+  });
+
+ });
  </script>
 
-</head><body>
-<h2>wowTalentNeeds jQuery plugin</h2>
-<a class="download" href="http://github.com/Mottie/wowTalentNeeds"> Download </a>
-<br class="clear">
+</head>
+<body>
+<h2><a href="https://github.com/Mottie/wowTalentNeeds">World of Warcraft Talent Needs</a></h2>
 
 <div class="recruitTitle">Needs - M,W,F</div>
-<div class="recruitTalent" id="recruit1"></div>
-<br><br>
-<div class="recruitTitle">Needs - T,Th,Sat</div>
-<div class="recruitTalent" id="recruit2"></div>
+<div id="recruit1"></div>
 
-</body></html>
+<br><br>
+
+<div class="recruitTitle">Needs - T,Th,Sat</div>
+<div id="recruit2"></div>
+
+</body>
+</html>
