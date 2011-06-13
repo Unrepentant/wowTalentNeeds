@@ -1,5 +1,5 @@
-/* World of Warcraft Recruit By Talent Widget
- * by Rob G (Mottie) 2010
+/* World of Warcraft Recruit By Talent Widget Version 1.3.1
+ * by Rob G (Mottie) 2011
  * http://mottie.guildportal.com
  * Dual licensed under the MIT or GPL Version 2.
  */
@@ -7,77 +7,70 @@
 (function($){
  $.wowTalents = function(el, options){
   // Avoid scope issues, use 'base' instead of 'this'
-  var base = this;
+  var base = this, o;
 
   // Access to jQuery and DOM versions of element
-  base.$el = $(el);
+  base.$el = $(el).addClass('recruitTalent');
 
   // Add a reverse reference to the DOM object
   base.$el.data('wowTalents', base);
 
   base.init = function(){
-   base.options = $.extend({},$.wowTalents.defaultOptions, options);
+   base.options = o = $.extend({}, $.wowTalents.defaultOptions, options);
 
    // define variables
-   var i,j,t,t1,t2,t3,c,tal,x;
+   var c,i,j,n,t,tal;
 
    // Validate defaultNeed class
-   x = base.options.defaultNeed.toLowerCase();
-   base.options.defaultNeed = "None";
-   if (x.match('l')) { base.options.defaultNeed = 'Low'; }
-   if (x.match('m')) { base.options.defaultNeed = 'Medium'; }
-   if (x.match('h')) { base.options.defaultNeed = 'High'; }
+   n = o.defaultNeed.toLowerCase();
+   o.defaultNeed = "None";
+   if (/^l/.test(n)) { o.defaultNeed = 'Low'; }
+   if (/^m/.test(n)) { o.defaultNeed = 'Medium'; }
+   if (/^h/.test(n)) { o.defaultNeed = 'High'; }
 
-   // To set tooltip background colors, we need to append objects
+   // Find the tooltip background colors: we need set up objects
    // with the assigned class to get the CSS text color settings
-   t = $('<div id="testsetcolors" style="display:none;"><p class="usebg"/><p class="none"/><p class="low"/><p class="medium"/><p class="high"/></div>');
-   t.appendTo($('body'));
-   base.options.bg = t.find('.usebg').css('color'); // text color when tooltip background is colored
-   base.options.cn = t.find('.none').css('color');
-   base.options.cl = t.find('.low').css('color');
-   base.options.cm = t.find('.medium').css('color');
-   base.options.ch = t.find('.high').css('color');
-   base.options.cd = t.find('.' + base.options.defaultNeed.toLowerCase()).css('color');
- //  t.remove();
+   t = $('<div><p class="usebg"/><p class="none"/><p class="low"/><p class="medium"/><p class="high"/></div>');
+   o.bg = t.find('.usebg').css('color'); // text color when tooltip background is colored
+   o.cn = t.find('.none').css('color');
+   o.cl = t.find('.low').css('color');
+   o.cm = t.find('.medium').css('color');
+   o.ch = t.find('.high').css('color');
+   o.cd = t.find('.' + o.defaultNeed.toLowerCase()).css('color');
 
    // Make table
    // **********
    // define reuseable strings
-   t = '<table width="100%"><tbody>';
-   t0 = '<span class="talentIcon ' + base.options.tooltipClass + ' ';
-   t1 = (base.options.tooltipMetadata == 'class') ? ' ' : '" ' + base.options.tooltipMetadata + '="';
-   t2 = ';}" title="<center>';
-   t3 = '</center>"></span> ';
+   t = '<div>';
    tal = $.wowTalents.talents.root;
    for ( i=0; i < tal.length; i++ ) {
-    x = base.options[tal[i].name.toLowerCase().replace(/\s+/g,'')].split(',');
-    t += '<tr><td class="classIcon ' + tal[i].icon + '"><span';
-    t += (base.options.useClassColors) ? ' style="color:' + tal[i].color + '">' : '>';
-    t += tal[i].name + '</span></td><td class="talentIcons">';
+    n = o[tal[i].name.toLowerCase().replace(/\s+/g,'')].split(',');
+    t += '<div class="wowclass"><span class="classIcon ' + tal[i].icon + '"><span';
+    t += (o.useClassColors) ? ' style="color:' + tal[i].color + '">' : '>';
+    t += tal[i].name + '</span></span><span class="talentIcons">';
 
     // build tree x3 for each class
     for ( j=0; j<3; j++ ) {
-     c = base.getStyle( x[j] || '' ); // get class c[0] & hex values c[1]
+     c = base.getStyle( n[j] || '' ); // get class c[0] & hex values c[1]
      // tooltip width, text color and background color added as metadata into the selected attribute
-     t += t0 + tal[i].tree[j][1] + ' ' + c[0].toLowerCase() + t1 + '{width:' + base.options.tooltipWidth + 'px;color:';
-     t += (base.options.colorBackground) ? base.options.bg + ';background:' : '';
-     t += c[1] + t2 + tal[i].tree[j][0] + ': ' + c[0] + t3;
+     t += '<span class="talentIcon ' + o.tooltipClass + ' ' + tal[i].tree[j][1] + ' ' + c[0].toLowerCase() +
+      (o.tooltipMetadata === 'class' ? ' ' : '" ' + o.tooltipMetadata + '="') + '{width:' + o.tooltipWidth + 'px;color:' +
+      (o.colorBackground ? o.bg + ';background:' : '') + c[1] + ';}" title="' + tal[i].tree[j][0] + ': ' + c[0] + '"></span> ';
     }
-
-    t += '</td></tr>';
+    t += '</span></div>';
    }
-   t += '</tbody></table>';
+   t += '</div>';
    base.$el.html(t);
   };
 
   // Return class & hex color
-  base.getStyle = function(x){
-   x = x.toLowerCase();
-   if (x.match('n')) { return ['None', base.options.cn]; }
-   if (x.match('l')) { return ['Low', base.options.cl]; }
-   if (x.match('m')) { return ['Medium', base.options.cm]; }
-   if (x.match('h')) { return ['High', base.options.ch]; }
-   return [base.options.defaultNeed, base.options.cd];
+  base.getStyle = function(n){
+   n = n.toLowerCase();
+   if (/^n/.test(n)) { return ['None', o.cn]; }
+   if (/^l/.test(n)) { return ['Low', o.cl]; }
+   if (/^m/.test(n)) { return ['Medium', o.cm]; }
+   if (/^h/.test(n)) { return ['High', o.ch]; }
+   return [o.defaultNeed, o.cd];
   };
 
   // Run initializer
@@ -91,7 +84,7 @@
   tooltipClass    : 'tooltip', // Class added for tooltip script to target
   tooltipWidth    : 150,       // Tooltip width, added to the tooltip metadata
   tooltipMetadata : 'class',   // Location the tooltip meta data is added e.g. {width:150px;color:#ddd;background:#333;}
-  deathknight     : ",,",      // The classes from here down are empty and will revert to the default need.
+  deathknight     : "",        // The classes from here down are empty and will revert to the default need.
   druid           : "",
   hunter          : "",
   mage            : "",

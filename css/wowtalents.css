@@ -11,6 +11,9 @@
 .low { color: #f00; }
 .none { color: #999; }
 
+/* height of each row, needs to be taller than the icon (.talentIcon) height */
+.wowclass { height: 24px; }
+
 /* opacity used on background images */
 .talentIcons .high { opacity: 1; filter: alpha(opacity=100); }
 .talentIcons .medium { opacity: .75; filter: alpha(opacity=75); }
@@ -20,7 +23,6 @@
 /* ".classIcon" contains the icon and text,
    ".classIcon span" only contains the class name text */
 .classIcon {
- width: 60%;
  background: url(../images/icons-wowclasses.gif) no-repeat;
  padding-left: 20px;
  width: 18px;
@@ -31,7 +33,7 @@
 /* wraps all 3 talent tree icons */
 .talentIcons {
  width: 40%;
- text-align: right;
+ float: right;
 }
 
 /* icons */
