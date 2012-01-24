@@ -1,4 +1,4 @@
-## WoWTalentNeeds (Recruit by talent) ##
+## WoWTalentNeeds (Recruit by talent) - [Demo][1]
 
 Show your World of Warcraft recruitment status by displaying the specific talent needed for each class. Check out the [demo][1]!
 
@@ -93,7 +93,14 @@ warlock     : "x,x,x",
 warrior     : "x,x,x"
 ```
 
-##Changelog##
+##Changelog
+
+**Version 1.3.2 (1/23/2012)**
+
+* Fixed tooltip coloring.
+ * Apparently, this plugin has been broken since the last update!
+ * It was working fine in Firefox, but not in any other browser. 
+ * Thank to kubiac37 for reporting it to me!
 
 **Version 1.3.1 (6/6/2011)**
 
