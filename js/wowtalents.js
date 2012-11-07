@@ -1,10 +1,11 @@
-/* World of Warcraft Recruit By Talent Widget Version 1.3.2
- * by Rob G (Mottie) 2011
+/*! World of Warcraft Recruit By Talent Widget Version 1.3.3
+ * by Rob G (Mottie) 2012
  * http://mottie.guildportal.com
  * Dual licensed under the MIT or GPL Version 2.
  */
-
-(function($){
+/*jshint jquery:true */
+;(function($){
+	"use strict";
 	$.wowTalents = function(el, options){
 		// Avoid scope issues, use 'base' instead of 'this'
 		var base = this, o;
@@ -50,8 +51,8 @@
 				t += (o.useClassColors) ? ' style="color:' + tal[i].color + '">' : '>';
 				t += tal[i].name + '</span></span><span class="talentIcons">';
 
-				// build tree x3 for each class
-				for ( j=0; j<3; j++ ) {
+				// build tree x3 for each class; reverse direction because we're floating the icons to the right.
+				for ( j = tal[i].tree.length - 1; j >= 0; j-- ) {
 					c = base.getStyle( n[j] || '' ); // get class c[0] & hex values c[1]
 					// tooltip width, text color and background color added as metadata into the selected attribute
 					t += '<span class="talentIcon ' + o.tooltipClass + ' ' + tal[i].tree[j][1] + ' ' + c[0].toLowerCase() +
@@ -89,6 +90,7 @@
 		druid           : "",
 		hunter          : "",
 		mage            : "",
+		monk            : "",
 		paladin         : "",
 		priest          : "",
 		rogue           : "",
@@ -109,6 +111,7 @@
 		"icon"  : "icon_class_druid",
 		"color" : "#ff7d0a",
 		"tree"  : [[ "Balance", "icon_druid_balance" ],
+		[ "Guardian", "icon_druid_guardian" ],
 		[ "Feral", "icon_druid_feral" ],
 		[ "Restoration", "icon_druid_restoration" ]]
 	},{
@@ -125,6 +128,13 @@
 		"tree"  : [[ "Arcane", "icon_mage_arcane" ],
 		[ "Fire", "icon_mage_fire" ],
 		[ "Frost", "icon_mage_frost" ]]
+	},{
+		"name"  : "Monk",
+		"icon"  : "icon_class_monk",
+		"color" : "#00ff96",
+		"tree"  : [[ "Brewmaster", "icon_monk_brewmaster" ],
+		[ "Mistweaver", "icon_monk_mistweaver" ],
+		[ "Windwalker", "icon_monk_windwalker" ]]
 	},{
 		"name"  : "Paladin",
 		"icon"  : "icon_class_paladin",
