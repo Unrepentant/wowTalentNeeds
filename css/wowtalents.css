@@ -32,7 +32,6 @@
 
 /* wraps all 3 talent tree icons */
 .talentIcons {
- width: 40%;
  float: right;
 }
 
@@ -40,9 +39,10 @@
 .talentIcon {
  background: url(../images/icons-wowtalents.gif) no-repeat;
  display: block;
- float: left;
+ float: right;
  width: 21px;
  height: 21px;
+ margin-left: 2px;
 }
 
 /* talent and class sprites */
@@ -50,36 +50,41 @@
 .icon_deathknight_frost { background-position: 0 -50px; }
 .icon_deathknight_unholy { background-position: 0 -100px; }
 .icon_druid_balance { background-position: 0 -150px; }
-.icon_druid_feral { background-position: 0 -200px; }
-.icon_druid_restoration { background-position: 0 -250px; }
-.icon_hunter_beast_mastery { background-position: 0 -300px; }
-.icon_hunter_marksmanship { background-position: 0 -350px; }
-.icon_hunter_survival { background-position: 0 -400px; }
-.icon_mage_arcane { background-position: 0 -450px; }
-.icon_mage_fire { background-position: 0 -500px; }
-.icon_mage_frost { background-position: 0 -550px; }
-.icon_paladin_holy { background-position: 0 -600px; }
-.icon_paladin_protection { background-position: 0 -650px; }
-.icon_paladin_retribution { background-position: 0 -700px; }
-.icon_priest_discipline { background-position: 0 -750px; }
-.icon_priest_holy { background-position: 0 -800px; }
-.icon_priest_shadow { background-position: 0 -850px; }
-.icon_rogue_assassination { background-position: 0 -900px; }
-.icon_rogue_combat { background-position: 0 -950px; }
-.icon_rogue_subtlety { background-position: 0 -1000px; }
-.icon_shaman_elemental { background-position: 0 -1050px; }
-.icon_shaman_enhancement { background-position: 0 -1100px; }
-.icon_shaman_restoration { background-position: 0 -1150px; }
-.icon_warlock_affliction { background-position: 0 -1200px; }
-.icon_warlock_demonology { background-position: 0 -1250px; }
-.icon_warlock_destruction { background-position: 0 -1300px; }
-.icon_warrior_arms { background-position: 0 -1350px; }
-.icon_warrior_fury { background-position: 0 -1400px; }
-.icon_warrior_protection { background-position: 0 -1450px; }
+.icon_druid_guardian { background-position: 0 -200px; }
+.icon_druid_feral { background-position: 0 -250px; }
+.icon_druid_restoration { background-position: 0 -300px; }
+.icon_hunter_beast_mastery { background-position: 0 -350px; }
+.icon_hunter_marksmanship { background-position: 0 -400px; }
+.icon_hunter_survival { background-position: 0 -450px; }
+.icon_mage_arcane { background-position: 0 -500px; }
+.icon_mage_fire { background-position: 0 -550px; }
+.icon_mage_frost { background-position: 0 -600px; }
+.icon_monk_brewmaster { background-position: 0 -1550px; }
+.icon_monk_mistweaver { background-position: 0 -1600px; }
+.icon_monk_windwalker { background-position: 0 -1650px; }
+.icon_paladin_holy { background-position: 0 -650px; }
+.icon_paladin_protection { background-position: 0 -700px; }
+.icon_paladin_retribution { background-position: 0 -750px; }
+.icon_priest_discipline { background-position: 0 -800px; }
+.icon_priest_holy { background-position: 0 -850px; }
+.icon_priest_shadow { background-position: 0 -900px; }
+.icon_rogue_assassination { background-position: 0 -950px; }
+.icon_rogue_combat { background-position: 0 -1000px; }
+.icon_rogue_subtlety { background-position: 0 -1050px; }
+.icon_shaman_elemental { background-position: 0 -1100px; }
+.icon_shaman_enhancement { background-position: 0 -1150px; }
+.icon_shaman_restoration { background-position: 0 -1200px; }
+.icon_warlock_affliction { background-position: 0 -1250px; }
+.icon_warlock_demonology { background-position: 0 -1300px; }
+.icon_warlock_destruction { background-position: 0 -1350px; }
+.icon_warrior_arms { background-position: 0 -1400px; }
+.icon_warrior_fury { background-position: 0 -1450px; }
+.icon_warrior_protection { background-position: 0 -1500px; }
 
 .icon_class_deathknight { background-position: 0 0; }
 .icon_class_druid { background-position: 0 -50px; }
 .icon_class_hunter { background-position: 0 -100px; }
+.icon_class_monk { background-position: 0 -500px; }
 .icon_class_mage { background-position: 0 -150px; }
 .icon_class_paladin { background-position: 0 -200px; }
 .icon_class_priest { background-position: 0 -250px; }

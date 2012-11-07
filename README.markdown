@@ -21,7 +21,7 @@ Show your World of Warcraft recruitment status by displaying the specific talent
 **Script**
 
 ```javascript
-$(document).ready(function(){
+$(function(){
   $('.recruitTalent').wowTalents({
     defaultNeed     : 'Low',     // Default need that is set when no setting is found
     colorBackground : true,      // Adds need level color to the tooltip background (true) or the text (false)
@@ -33,6 +33,7 @@ $(document).ready(function(){
     druid           : "",
     hunter          : "",
     mage            : "",
+    monk            : "",
     paladin         : "",
     priest          : "",
     rogue           : "",
@@ -82,9 +83,10 @@ You can set this variable to `l` (low), `m` (medium) or `h` (high), anything els
 
 ```javascript
 deathknight : "x,x,x",
-druid       : "x,x,x",
+druid       : "x,x,x,x",
 hunter      : "x,x,x",
 mage        : "x,x,x",
+monk        : "x,x,x",
 paladin     : "x,x,x",
 priest      : "x,x,x",
 rogue       : "x,x,x",
@@ -94,6 +96,13 @@ warrior     : "x,x,x"
 ```
 
 ##Changelog
+
+**Version 1.3.3 (11/7/2012)**
+
+* Added Monk class.
+* Added the Druid Guardian talent.
+* Updated image files; the talent image sprite is not backwards compatible.
+* Updated tooltip script.
 
 **Version 1.3.2 (1/23/2012)**
 
