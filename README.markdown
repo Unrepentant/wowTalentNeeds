@@ -1,10 +1,10 @@
-## WoWTalentNeeds (Recruit by talent) - [Demo][1]
+# WoWTalentNeeds (Recruit by talent) - [Demo][1]
 
 Show your World of Warcraft recruitment status by displaying the specific talent needed for each class. Check out the [demo][1]!
 
  ![talent1.jpg][2] &nbsp;&nbsp; ![talent2.jpg][3] &nbsp;&nbsp; ![talent3.jpg][4]
 
-## Features ##
+# Features
 
 * This World of Warcraft class recruitment box shows the class needs by talent tree specialization.
 * Add class coloring (optional). Adjust as desired in the CSS.
@@ -12,13 +12,14 @@ Show your World of Warcraft recruitment status by displaying the specific talent
 * Tooltips show the need level with either the tooltip background or the text colored specifically to the need.
 * Minimal coding is required to set the needs of any one class.
 
-## Requirements ##
+# Requirements
 
 * jQuery 1.4.2+
 * Tooltip plugin (uses metadata & live events) - included with script
 
-## Default Options ##
-**Script**
+# Default Options
+
+### Script
 
 ```javascript
 $(function(){
@@ -44,15 +45,15 @@ $(function(){
 });
 ```
 
-**HTML**
+### HTML
 
 ```html
 <div class="recruitTalent"></div>
 ```
 
-## Customization ##
+# Customization
 
-**CSS Styles:**
+### CSS Styles:
 
 * `.recruitTitle` - Styles the title of the widget above the box. The text of this title is in blue, look for "Recruitment Needs".
 * `.recruitTalent` - Sets the overall style of the widget. Set to be 200px wide by default.
@@ -67,7 +68,7 @@ $(function(){
 * `.talentIcons` - Styles the table cell that contains all three talent icons.
 * `.talentIcon` - Contains the background image which contains all of the talent tree images.
 
-**Options:**
+### Options:
 
 * `defaultNeed` is set to "Low" by default
 What this variable does is if you don't set the specific class need in the options, it will default to whatever this variable is set to.
@@ -81,62 +82,66 @@ You can set this variable to `l` (low), `m` (medium) or `h` (high), anything els
 
 * Use the class name to set each class need. Replace the `x` below with an `n` (none), `l` (low), `m` (medium) or `h` (high); adding anything else will cause the script to add the value of the `defaultNeed` option:
 
-```javascript
-deathknight : "x,x,x",
-druid       : "x,x,x,x",
-hunter      : "x,x,x",
-mage        : "x,x,x",
-monk        : "x,x,x",
-paladin     : "x,x,x",
-priest      : "x,x,x",
-rogue       : "x,x,x",
-shaman      : "x,x,x",
-warlock     : "x,x,x",
-warrior     : "x,x,x"
-```
+    ```javascript
+    deathknight : "x,x,x",
+    druid       : "x,x,x,x",
+    hunter      : "x,x,x",
+    mage        : "x,x,x",
+    monk        : "x,x,x",
+    paladin     : "x,x,x",
+    priest      : "x,x,x",
+    rogue       : "x,x,x",
+    shaman      : "x,x,x",
+    warlock     : "x,x,x",
+    warrior     : "x,x,x"
+    ```
 
-##Changelog
+# Changelog
 
-**Version 1.3.3 (11/7/2012)**
+### Version 1.3.3 moved (9/13/2013)
+
+* Moved repo: [https://github.com/Unrepentant/wowTalentNeeds](https://github.com/Unrepentant/wowTalentNeeds)
+
+### Version 1.3.3 (11/7/2012)
 
 * Added Monk class.
 * Added the Druid Guardian talent.
 * Updated image files; the talent image sprite is not backwards compatible.
 * Updated tooltip script.
 
-**Version 1.3.2 (1/23/2012)**
+### Version 1.3.2 (1/23/2012)
 
 * Fixed tooltip coloring.
  * Apparently, this plugin has been broken since the last update!
  * It was working fine in Firefox, but not in any other browser. 
  * Thank to kubiac37 for reporting it to me!
 
-**Version 1.3.1 (6/6/2011)**
+### Version 1.3.1 (6/6/2011)
 
 * Changed layout from using a table to divs and spans.
 * Tooltips will now only show the text about the talent need. Removed the center tag.
 * Did some code cleanup & moved all demo files to a demo directory.
 
-**Version 1.3 (10/3/2010)**
+### Version 1.3 (10/3/2010)
 
 * Updated script to use background image sprites.
 * Moved the CSS to an external file.
 * Cleaned up code, optimized and added a minified version.
 * Posted to GitHub.
 
-**Version 1.2 (3/11/2010)**
+### Version 1.2 (3/11/2010)
 
 * Added `useClassColors` option to allow turning off the class coloring for sites using a white background.
 
-**Version 1.1 (3/11/2010)**
+### Version 1.1 (3/11/2010)
 
 * Changed `defaultNeed` to work with just the first letter.
 
-**Version 1.0 (2/21/2010)**
+### Version 1.0 (2/21/2010)
 
 * Initial version
 
-  [1]: http://mottie.github.com/wowTalentNeeds/
-  [2]: http://mottie.github.com/wowTalentNeeds/demo/talent1.jpg
-  [3]: http://mottie.github.com/wowTalentNeeds/demo/talent2.jpg
-  [4]: http://mottie.github.com/wowTalentNeeds/demo/talent3.jpg
+  [1]: http://Unrepentant.github.com/wowTalentNeeds/
+  [2]: http://Unrepentant.github.com/wowTalentNeeds/demo/talent1.jpg
+  [3]: http://Unrepentant.github.com/wowTalentNeeds/demo/talent2.jpg
+  [4]: http://Unrepentant.github.com/wowTalentNeeds/demo/talent3.jpg
